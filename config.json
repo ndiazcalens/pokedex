@@ -1,0 +1,17 @@
+{
+    "appName": "POKEDEX",
+    "version": "1.0.0",
+    "author": "",
+    "description": "Leer README.md",
+    "settings": {
+      "language": "es",
+      "pokeapi": "https://pokeapi.co/",
+      "apiUrl": "https://pokeapi.co/api/v2/pokemon/"
+    },
+    "paths": {
+      "css": "./src/css/",
+      "js": "./src/js/",
+      "images": "./src/images/"
+    }
+  }
+  
