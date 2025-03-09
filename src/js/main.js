@@ -2,16 +2,22 @@ const pokemonList = document.querySelector("#pokemon-list");
 const headerButtons = document.querySelectorAll(".btn-header"); 
 let api_url = "https://pokeapi.co/api/v2/pokemon/"; 
 
-for (let i=1; i <= 151; i++){
-    fetch(api_url + i)                        // .then() ejecuta una función cuando una promesa se cumple (es decir, cuando una operación asíncrona se completa con éxito).
-        .then( (response)=> response.json() ) //Cuando la API responde, convierte la respuesta a formato JSON.
-        .then(data => showPokemon (data)) // Cuando los datos JSON están listos, muestra los datos del Pokémon en la página.
+async function fetchAllPokemon() {
+  const promises = [];
+  for (let i = 1; i <= 151; i++) {
+      promises.push(fetch(api_url + i).then(response => response.json()));  // Realiza una petición fetch a la API y agrega la promesa al array
+  }
+  
+  const pokemonData = await Promise.all(promises);  // Espera a que todas las promesas se resuelvan y obtiene los datos de los Pokémon
+  pokemonData.forEach(data => showPokemon(data));   // Itera sobre los datos de los Pokémon y llama a la función showPokemon para cada uno
 }
+
+fetchAllPokemon();
 
 function showPokemon(data){
 
-    let types = data.types.map((type) => `<p class="${type.type.name} type">${type.type.name}</p> `); //`type` es la variable de iteración del `.map()` que accede al objeto dentro de `data.types`.
-    types = types.join(''); // `.join('')` une todos los elementos del array en una sola string sin separadores.
+    let types = data.types.map((type) => `<p class="${type.type.name} type">${type.type.name}</p> `);      //`type` es la variable de iteración del `.map()` que accede al objeto dentro de `data.types`.
+    types = types.join('');                                         // `.join('')` une todos los elementos del array en una sola string sin separadores.
 
 
     let dataId = (data.id).toString();
@@ -47,17 +53,17 @@ function showPokemon(data){
 
 
 headerButtons.forEach(button => button.addEventListener("click", async (event) => {
-  const buttonId = event.currentTarget.id; // Obtiene el ID del botón clickeado
+  const buttonId = event.currentTarget.id;                  // Obtiene el ID del botón clickeado
 
-  pokemonList.innerHTML = ""; // Limpia la lista de Pokémon
+  pokemonList.innerHTML = "";                             // Limpia la lista de Pokémon
 
-  const promises = []; // Crea un array para almacenar las promesas de las peticiones fetch
+  const promises = [];                                      // Crea un array para almacenar las promesas de las peticiones fetch
   for (let i = 1; i <= 151; i++) {
     promises.push(fetch(api_url + i).then(response => response.json())); // Agrega promesas al array
   }
 
   try {
-    const pokemonData = await Promise.all(promises); // Espera a que todas las promesas se resuelvan
+    const pokemonData = await Promise.all(promises);            // Espera a que todas las promesas se resuelvan
 
     pokemonData.forEach(data => {                               // Itera sobre los datos de los Pokémon
       if (buttonId === "see-all") {                             // Si el botón es "see-all"
