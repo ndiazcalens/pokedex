@@ -47,25 +47,29 @@ function showPokemon(data){
 
 
 headerButtons.forEach(button => button.addEventListener("click", async (event) => {
-    const buttonId = event.currentTarget.id;
-  
-    pokemonList.innerHTML = "";
-  
-    for (let i = 1; i <= 151; i++) {
-      try{
-        const response = await fetch(api_url + i); // feth hace la peticion a la api, await espera la respuesta antes de continuar
-        const data = await response.json(); // transforma la data en json
-  
-        if (buttonId === "see-all") {
-          showPokemon(data);
-        } else {
-          const types = data.types.map(type => type.type.name); // map crea un nuevo array con los nombres de los tipos de pokemon
-          if (types.includes(buttonId)) {  // includes verifica si buttonId esta adentro del array de types 
-            showPokemon(data);
-          }
+  const buttonId = event.currentTarget.id; // Obtiene el ID del botón clickeado
+
+  pokemonList.innerHTML = ""; // Limpia la lista de Pokémon
+
+  const promises = []; // Crea un array para almacenar las promesas de las peticiones fetch
+  for (let i = 1; i <= 151; i++) {
+    promises.push(fetch(api_url + i).then(response => response.json())); // Agrega promesas al array
+  }
+
+  try {
+    const pokemonData = await Promise.all(promises); // Espera a que todas las promesas se resuelvan
+
+    pokemonData.forEach(data => {                               // Itera sobre los datos de los Pokémon
+      if (buttonId === "see-all") {                             // Si el botón es "see-all"
+        showPokemon(data);                                      // Muestra todos los Pokémon
+      } else {                                                  // Si el botón es un tipo de Pokémon
+        const types = data.types.map(type => type.type.name);   // Obtiene los nombres de los tipos del Pokémon
+        if (types.includes(buttonId)) {                         // Si el Pokémon tiene el tipo del botón
+          showPokemon(data);                                    // Muestra el Pokémon
         }
-      } catch(error){
-        console.error("Error fetching pokemon", error); // maneja errores
       }
-    }
-  }));
+    });
+  } catch (error) {                                             // Maneja errores
+    console.error("Error fetching pokemon", error);
+  }
+}));
