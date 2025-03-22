@@ -102,10 +102,16 @@ main{
     width: 100%;
 }
 
-@media screen and (min-width: 470px) {
+@media screen and (min-width: 390px) {
     .all-pokemon{
         grid-template-columns: 1fr 1fr;
     }
+    .pokemon-detail{
+        width: 100%;
+        max-width: 20rem;
+        margin: 0 auto;
+    }    
+    
 }
 
 @media screen and (min-width: 700px) {
