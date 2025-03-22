@@ -1,5 +1,7 @@
 const pokemonList = document.querySelector("#pokemon-list");
-const headerButtons = document.querySelectorAll(".btn-header"); 
+const headerButtons = document.querySelectorAll(".btn-header");
+const detailPokemons = document.querySelector(".detail-view");
+
 let api_url = "https://pokeapi.co/api/v2/pokemon/"; 
 
 async function fetchAllPokemon() {
@@ -29,6 +31,7 @@ function showPokemon(data){
 
     const div = document.createElement("div");
     div.classList.add("pokemon");
+    div.setAttribute("data-name", data.name);  // Le agregamos un atributo para identificarlo
     div.innerHTML = `
         <p class="pokemon-id-back">#${dataId}</p>
         <div class="pokemon-img">
@@ -48,13 +51,45 @@ function showPokemon(data){
             </div>
         </div>
     `;
-    pokemonList.append(div); 
+
+    div.addEventListener("click", ()=>{
+      const nameId = div.getAttribute("data-name")
+
+      pokemonList.innerHTML = "";
+      
+      const detailView= `
+        <div class="pokemon-detail">
+          <p class="pokemon-id-back">#${dataId}</p>
+          <div class="pokemon-img">
+              <img src="${data.sprites.other["official-artwork"].front_default}" alt="${data.name}">
+          </div>
+          <div class="pokemon-info">
+              <div class="name-container">
+                  <p class="pokemon-id">#${dataId}</p>
+                  <h2 class="pokemon-name">${data.name}</h2>
+              </div>
+              <div class="pokemon-types">
+                  ${types}
+              </div>
+              <div class="pokemon-stats">
+                  <p class="stat">${data.height}m</p>
+                  <p class="stat">${data.weight}kg</p>
+              </div>
+          </div>
+        </div>  
+      `
+      detailPokemons.innerHTML = detailView;
+
+    })
+    pokemonList.append(div);
+  
 };
 
-
 headerButtons.forEach(button => button.addEventListener("click", async (event) => {
+
   const buttonId = event.currentTarget.id;                  // Obtiene el ID del botón clickeado
 
+  detailPokemons.innerHTML = "";
   pokemonList.innerHTML = "";                             // Limpia la lista de Pokémon
 
   const promises = [];                                      // Crea un array para almacenar las promesas de las peticiones fetch

@@ -115,6 +115,7 @@ main{
 }
 
 .pokemon{
+    cursor: pointer;
     background-color: var(--crl-white);
     box-shadow: 0 0 1rem;
     border-radius: 1rem;
@@ -123,6 +124,29 @@ main{
     position: relative; /* position: relative; - Permite mover un elemento desde su posición original sin afectar el flujo del documento. */
     isolation: isolate; /* isolation: isolate; - Crea una capa separada para el elemento, evitando mezclas visuales no deseadas. */
     overflow: hidden;
+}
+
+.detail-view{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokemon-detail{
+    min-width: 40rem;
+    background-color: var(--crl-white);
+    box-shadow: 0 0 1rem;
+    border-radius: 1rem;
+    margin: 0.3rem;
+    padding: 1rem;
+    position: relative; /* position: relative; - Permite mover un elemento desde su posición original sin afectar el flujo del documento. */
+    isolation: isolate; /* isolation: isolate; - Crea una capa separada para el elemento, evitando mezclas visuales no deseadas. */
+    overflow: hidden;
+}
+
+.pokemon:hover{
+    transform: scale(1.1);
+    z-index: +1;
 }
 
 
