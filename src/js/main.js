@@ -169,34 +169,40 @@ function showPokemon(data){
             }else if (evolutionFrom != null && evolutionTo != null){
                 detailView +=`
 
-                <div class="evolutions-tittles">
-                  <div class="evolutions-tittle-to">EVOLVES FROM</div>
-                  <div class="evolutions-tittle-from">EVOLVES TO</div>
-                </div>
+                
                 <div class="evolutions">
-                  
-                  <div class="pokemon-detail">
-                    <p class="pokemon-id-back">#${pokemonData[i-1].id.toString().padStart(3, "0")}</p>
-                    <div class="pokemon-img">
-                        <img src="${pokemonData[i-1].sprites.other["official-artwork"].front_default}" alt="${pokemonData[i-1].name}">
+                  <div>
+                    <div class="evolutions-tittles">
+                      <div class="evolutions-tittle-to">EVOLVES FROM</div>
                     </div>
-                    <div class="pokemon-info">
-                        <div class="name-container">
-                            <p class="pokemon-id">#${pokemonData[i-1].id.toString().padStart(3, "0")}</p>
-                            <h2 class="pokemon-name">${pokemonData[i-1].name}</h2>
-                        </div>
-                        <div class="pokemon-types">
-                            ${types}
-                        </div>
-                        <div class="pokemon-stats">
-                            <p class="stat">${pokemonData[i-1].height}m</p>
-                            <p class="stat">${pokemonData[i-1].weight}kg</p>
-                        </div>
+                    <div class="pokemon-detail">
+                      <p class="pokemon-id-back">#${pokemonData[i-1].id.toString().padStart(3, "0")}</p>
+                      <div class="pokemon-img">
+                          <img src="${pokemonData[i-1].sprites.other["official-artwork"].front_default}" alt="${pokemonData[i-1].name}">
+                      </div>
+                      <div class="pokemon-info">
+                          <div class="name-container">
+                              <p class="pokemon-id">#${pokemonData[i-1].id.toString().padStart(3, "0")}</p>
+                              <h2 class="pokemon-name">${pokemonData[i-1].name}</h2>
+                          </div>
+                          <div class="pokemon-types">
+                              ${types}
+                          </div>
+                          <div class="pokemon-stats">
+                              <p class="stat">${pokemonData[i-1].height}m</p>
+                              <p class="stat">${pokemonData[i-1].weight}kg</p>
+                          </div>
+                      </div>
                     </div>
                   </div>
 
                   
-                  <div class="pokemon-detail">
+                  
+                  <div>
+                    <div class="evolutions-tittles">
+                      <div class="evolutions-tittle-to">EVOLVES TO</div>
+                    </div>
+                    <div class="pokemon-detail">
                     <p class="pokemon-id-back">#${pokemonData[i+1].id.toString().padStart(3, "0")}</p>
                     <div class="pokemon-img">
                         <img src="${pokemonData[i+1].sprites.other["official-artwork"].front_default}" alt="${pokemonData[i+1].name}">
@@ -213,9 +219,9 @@ function showPokemon(data){
                             <p class="stat">${pokemonData[i+1].height}m</p>
                             <p class="stat">${pokemonData[i+1].weight}kg</p>
                         </div>
-                    </div>
                   </div>
                 </div>
+                
               </div>
               `
             }else if(evolutionFrom != null && evolutionTo == null){
