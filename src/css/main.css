@@ -102,24 +102,85 @@ main{
     width: 100%;
 }
 
-@media screen and (min-width: 470px) {
-    .all-pokemon{
-        grid-template-columns: 1fr 1fr;
+@media screen and (max-width: 470px) {
+    .detail-view {
+        padding: 1rem;
     }
-    .pokemon-detail{
-        max-width: 20rem;
+
+    .evolution-chain {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+        flex-direction: column;
     }
-    .evolutions{
-        display: block;
+
+    .original,
+    .evolutions {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
     }
-    
+
+    .evolutions-tittle,
+    .evolutions-tittle-to,
+    .evolutions-tittle-from {
+        margin: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .evolutions-tittles {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pokemon-detail {
+        min-width: auto;
+        width: 90%;
+        margin: 0.5rem auto;
+        padding: 0.5rem;
+    }
+
+    .pokemon-img img {
+        max-width: 4rem;
+    }
+
+    .pokemon-stats {
+        flex-direction: column;
+    }
+
+    .stat {
+        width: 80%;
+        margin: 0.2rem auto;
+    }
+
+    .evolutions {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
+/* Eliminamos la media query de 471px a 699px */
+
 @media screen and (min-width: 700px) {
-    .all-pokemon{
+    .all-pokemon {
         grid-template-columns: 1fr 1fr 1fr;
     }
+
+    .evolution-chain {
+        display: flex; /* Añadido para asegurarnos de que sea flex */
+        flex-direction: row; /* Cambiamos a row para pantallas grandes */
+        gap: 3rem;
+    }
+
+    .evolutions {
+        display: flex; /* Añadido para asegurarnos de que sea flex */
+        flex-direction: row; /* Cambiamos a row para pantallas grandes */
+    }
 }
+
 
 .pokemon{
     cursor: pointer;
