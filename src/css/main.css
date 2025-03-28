@@ -108,7 +108,10 @@ main{
     }
     .pokemon-detail{
         max-width: 20rem;
-    }    
+    }
+    .evolutions{
+        display: block;
+    }
     
 }
 
