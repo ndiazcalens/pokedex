@@ -14,6 +14,8 @@ Este proyecto es una aplicación en **JavaScript Vanilla** que utiliza la API de
                 📜pokeball.png
             📁js
                 📜main.js
+        📁data
+            📜evolutions.json
         📜config.json
         📜index.html
         📜README.md

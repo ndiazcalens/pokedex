@@ -136,6 +136,56 @@ main{
     justify-content: center;
 }
 
+
+.evolution-chain{
+    display: block;
+    align-items: center;
+    gap: 3rem;
+}
+
+.original{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.evolutions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.evolutions-tittle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    font-weight: 600;
+}
+
+.evolutions-tittle-to{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 1rem;
+    font-weight: 600;
+}
+
+.evolutions-tittle-from{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 1rem;
+    font-weight: 600;
+}
+
+.evolutions-tittles{
+    display: flex;
+    justify-content: center;
+}
+
+
+
 .pokemon-detail{
     min-width: 20rem;
     background-color: var(--crl-white);
