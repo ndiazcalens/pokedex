@@ -83,7 +83,9 @@ function showPokemon(data){
         detailView= `
             
               <div class="back-button">
-                <button class="btn btn-header arrow-btn" id="see-all2"></button>
+                <button class="btn btn-header arrow-btn" id="see-all2">
+                  <i class="fa-solid fa-arrow-left"></i>
+                </button>
               </div>
               
               <div class= "evolution-chain">

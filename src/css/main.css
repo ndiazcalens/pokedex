@@ -232,7 +232,6 @@ main{
 
 
 .arrow-btn::after {
-    content: "🡄"; /* Esta flecha es más gruesa que → */
     font-size: 1em;
     vertical-align: middle;
     margin: 1rem;
