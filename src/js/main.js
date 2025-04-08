@@ -1,8 +1,8 @@
 const pokemonList = document.querySelector("#pokemon-list");
 const headerButtons = document.querySelectorAll(".btn-header");
 const detailPokemons = document.querySelector(".detail-view");
-const pokemons = document.querySelectorAll(".pokemon")
-const evolution= document.querySelector(".evols");
+const pokemons = document.querySelectorAll(".pokemon");
+const backButton = document.querySelector(".back-button");
 
 
 let pokemonData =  [];
@@ -81,6 +81,11 @@ function showPokemon(data){
       if (evolutionsData[dataKey.replace(/^0+/, "")] != null){
 
         detailView= `
+            
+              <div class="back-button">
+                <button class="btn btn-header arrow-btn" id="see-all2"></button>
+              </div>
+              
               <div class= "evolution-chain">
                 <div class= "original">
                   <div class="pokemon-detail">
@@ -274,8 +279,17 @@ function showPokemon(data){
         
         }
       }
-      
+
       detailPokemons.innerHTML = detailView; 
+
+      const backButton = document.getElementById("see-all2");
+      if (backButton) {                                             // Verifica que el botón exista
+        backButton.addEventListener("click", () => {  
+          detailPokemons.innerHTML = "";                            // Limpia el contenedor de detalles del Pokémon y la lista
+          pokemonList.innerHTML = "";
+          pokemonData.forEach(data => showPokemon(data));           // Vuelve a mostrar todos los Pokémon recorriendo el array
+        });
+      }
 
       
     })
@@ -315,3 +329,5 @@ headerButtons.forEach(button => button.addEventListener("click", async (event) =
     console.error("Error fetching pokemon", error);
   }
 }));
+
+

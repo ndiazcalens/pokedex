@@ -113,6 +113,7 @@ main{
         align-items: center;
         gap: 1rem;
         flex-direction: column;
+        margin-top: 3rem;
     }
 
     .original,
@@ -160,6 +161,17 @@ main{
         display: flex;
         flex-direction: column;
     }
+
+    
+    .back-button {
+        position: absolute;
+        top: 0.5rem;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-50%);
+        z-index: 10;
+    }
+
 }
 
 /* Eliminamos la media query de 471px a 699px */
@@ -213,8 +225,24 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
+
+
+
+.arrow-btn::after {
+    content: "🡄"; /* Esta flecha es más gruesa que → */
+    font-size: 1em;
+    vertical-align: middle;
+    margin: 1rem;
+}
+
+.back-button{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
 
 .evolution-chain{
     display: block;
@@ -451,3 +479,5 @@ main{
     background-color: var(--type-fairy);
     color: var(--clr-black);
 }
+
+
