@@ -1,247 +1,247 @@
 {
-    "1": {
-      "name": "bulbasaur",
-      "evolves_from": null,
-      "evolves_to": ["2", "3"]
-    },
-    "2": {
-      "name": "ivysaur",
-      "evolves_from": "1",
-      "evolves_to": ["3"]
-    },
-    "3": {
-      "name": "venusaur",
-      "evolves_from": "2",
-      "evolves_to": null
-    },
-    "4": {
-      "name": "charmander",
-      "evolves_from": null,
-      "evolves_to": ["5", "6"]
-    },
-    "5": {
-      "name": "charmeleon",
-      "evolves_from": "4",
-      "evolves_to": ["6"]
-    },
-    "6": {
-      "name": "charizard",
-      "evolves_from": "5",
-      "evolves_to": null
-    },
-    "7": {
-      "name": "squirtle",
-      "evolves_from": null,
-      "evolves_to": ["8", "9"]
-    },
-    "8": {
-      "name": "wartortle",
-      "evolves_from": "7",
-      "evolves_to": ["9"]
-    },
-    "9": {
-      "name": "blastoise",
-      "evolves_from": "8",
-      "evolves_to": null
-    },
-    "10": {
-      "name": "caterpie",
-      "evolves_from": null,
-      "evolves_to": ["11", "12"]
-    },
-    "11": {
-      "name": "metapod",
-      "evolves_from": "10",
-      "evolves_to": ["12"]
-    },
-    "12": {
-      "name": "butterfree",
-      "evolves_from": "11",
-      "evolves_to": null
-    },
-    "13": {
-      "name": "weedle",
-      "evolves_from": null,
-      "evolves_to": ["14", "15"]
-    },
-    "14": {
-      "name": "kakuna",
-      "evolves_from": "13",
-      "evolves_to": ["15"]
-    },
-    "15": {
-      "name": "beedrill",
-      "evolves_from": "14",
-      "evolves_to": null
-    },
-    "16": {
-      "name": "pidgey",
-      "evolves_from": null,
-      "evolves_to": ["17", "18"]
-    },
-    "17": {
-      "name": "pidgeotto",
-      "evolves_from": "16",
-      "evolves_to": ["18"]
-    },
-    "18": {
-      "name": "pidgeot",
-      "evolves_from": "17",
-      "evolves_to": null
-    },
-    "19": {
-      "name": "rattata",
-      "evolves_from": null,
-      "evolves_to": ["20"]
-    },
-    "20": {
-      "name": "raticate",
-      "evolves_from": "19",
-      "evolves_to": null
-    },
-    "21": {
-      "name": "spearow",
-      "evolves_from": null,
-      "evolves_to": ["22"]
-    },
-    "22": {
-      "name": "fearow",
-      "evolves_from": "21",
-      "evolves_to": null
-    },
-    "23": {
-      "name": "ekans",
-      "evolves_from": null,
-      "evolves_to": ["24"]
-    },
-    "24": {
-      "name": "arbok",
-      "evolves_from": "23",
-      "evolves_to": null
-    },
-    "25": {
-      "name": "pikachu",
-      "evolves_from": null,
-      "evolves_to": ["26"]
-    },
-    "26": {
-      "name": "raichu",
-      "evolves_from": "25",
-      "evolves_to": null
-    },
-    "27": {
-      "name": "sandshrew",
-      "evolves_from": null,
-      "evolves_to": ["28"]
-    },
-    "28": {
-      "name": "sandslash",
-      "evolves_from": "27",
-      "evolves_to": null
-    },
-    "29": {
-      "name": "nidoran-f",
-      "evolves_from": null,
-      "evolves_to": ["30", "31"]
-    },
-    "30": {
-      "name": "nidorina",
-      "evolves_from": "29",
-      "evolves_to": ["31"]
-    },
-    "31": {
-      "name": "nidoqueen",
-      "evolves_from": "30",
-      "evolves_to": null
-    },
-    "32": {
-      "name": "nidoran-m",
-      "evolves_from": null,
-      "evolves_to": ["33", "34"]
-    },
-    "33": {
-      "name": "nidorino",
-      "evolves_from": "32",
-      "evolves_to": ["34"]
-    },
-    "34": {
-      "name": "nidoking",
-      "evolves_from": "33",
-      "evolves_to": null
-    },
-    "35": {
-      "name": "clefairy",
-      "evolves_from": null,
-      "evolves_to": ["36"]
-    },
-    "36": {
-      "name": "clefable",
-      "evolves_from": "35",
-      "evolves_to": null
-    },
-    "37": {
-      "name": "vulpix",
-      "evolves_from": null,
-      "evolves_to": ["38"]
-    },
-    "38": {
-      "name": "ninetales",
-      "evolves_from": "37",
-      "evolves_to": null
-    },
-    "39": {
-      "name": "jigglypuff",
-      "evolves_from": null,
-      "evolves_to": ["40"]
-    },
-    "40": {
-      "name": "wigglytuff",
-      "evolves_from": "39",
-      "evolves_to": null
-    },
-    "41": {
-      "name": "zubat",
-      "evolves_from": null,
-      "evolves_to": ["42"]
-    },
-    "42": {
-      "name": "golbat",
-      "evolves_from": "41",
-      "evolves_to": null
-    },
-    "43": {
-      "name": "oddish",
-      "evolves_from": null,
-      "evolves_to": ["44", "45"]
-    },
-    "44": {
-      "name": "gloom",
-      "evolves_from": "43",
-      "evolves_to": ["45"]
-    },
-    "45": {
-      "name": "vileplume",
-      "evolves_from": "44",
-      "evolves_to": null
-    },
-    "46": {
-      "name": "paras",
-      "evolves_from": null,
-      "evolves_to": ["47"]
-    },
-    "47": {
-      "name": "parasect",
-      "evolves_from": "46",
-      "evolves_to": null
-    },
-    "48": {
+  "1": {
+    "name": "bulbasaur",
+    "evolves_from": null,
+    "evolves_to": ["2", "3"]
+  },
+  "2": {
+    "name": "ivysaur",
+    "evolves_from": [1],
+    "evolves_to": ["3"]
+  },
+  "3": {
+    "name": "venusaur",
+    "evolves_from": [1, 2],
+    "evolves_to": null
+  },
+  "4": {
+    "name": "charmander",
+    "evolves_from": null,
+    "evolves_to": ["5", "6"]
+  },
+  "5": {
+    "name": "charmeleon",
+    "evolves_from": [4],
+    "evolves_to": ["6"]
+  },
+  "6": {
+    "name": "charizard",
+    "evolves_from": [4, 5],
+    "evolves_to": null
+  },
+  "7": {
+    "name": "squirtle",
+    "evolves_from": null,
+    "evolves_to": ["8", "9"]
+  },
+  "8": {
+    "name": "wartortle",
+    "evolves_from": [7],
+    "evolves_to": ["9"]
+  },
+  "9": {
+    "name": "blastoise",
+    "evolves_from": [7, 8],
+    "evolves_to": null
+  },
+  "10": {
+    "name": "caterpie",
+    "evolves_from": null,
+    "evolves_to": ["11", "12"]
+  },
+  "11": {
+    "name": "metapod",
+    "evolves_from": [10],
+    "evolves_to": ["12"]
+  },
+  "12": {
+    "name": "butterfree",
+    "evolves_from": [10, 11],
+    "evolves_to": null
+  },
+  "13": {
+    "name": "weedle",
+    "evolves_from": null,
+    "evolves_to": ["14", "15"]
+  },
+  "14": {
+    "name": "kakuna",
+    "evolves_from": [13],
+    "evolves_to": ["15"]
+  },
+  "15": {
+    "name": "beedrill",
+    "evolves_from": [13, 14],
+    "evolves_to": null
+  },
+  "16": {
+    "name": "pidgey",
+    "evolves_from": null,
+    "evolves_to": ["17", "18"]
+  },
+  "17": {
+    "name": "pidgeotto",
+    "evolves_from": [16],
+    "evolves_to": ["18"]
+  },
+  "18": {
+    "name": "pidgeot",
+    "evolves_from": [16, 17],
+    "evolves_to": null
+  },
+  "19": {
+    "name": "rattata",
+    "evolves_from": null,
+    "evolves_to": ["20"]
+  },
+  "20": {
+    "name": "raticate",
+    "evolves_from": [19],
+    "evolves_to": null
+  },
+  "21": {
+    "name": "spearow",
+    "evolves_from": null,
+    "evolves_to": ["22"]
+  },
+  "22": {
+    "name": "fearow",
+    "evolves_from": [21],
+    "evolves_to": null
+  },
+  "23": {
+    "name": "ekans",
+    "evolves_from": null,
+    "evolves_to": ["24"]
+  },
+  "24": {
+    "name": "arbok",
+    "evolves_from": [23],
+    "evolves_to": null
+  },
+  "25": {
+    "name": "pikachu",
+    "evolves_from": null,
+    "evolves_to": ["26"]
+  },
+  "26": {
+    "name": "raichu",
+    "evolves_from": [25],
+    "evolves_to": null
+  },
+  "27": {
+    "name": "sandshrew",
+    "evolves_from": null,
+    "evolves_to": ["28"]
+  },
+  "28": {
+    "name": "sandslash",
+    "evolves_from": [27],
+    "evolves_to": null
+  },
+  "29": {
+    "name": "nidoran-f",
+    "evolves_from": null,
+    "evolves_to": ["30", "31"]
+  },
+  "30": {
+    "name": "nidorina",
+    "evolves_from": [29],
+    "evolves_to": ["31"]
+  },
+  "31": {
+    "name": "nidoqueen",
+    "evolves_from": [29, 30],
+    "evolves_to": null
+  },
+  "32": {
+    "name": "nidoran-m",
+    "evolves_from": null,
+    "evolves_to": ["33", "34"]
+  },
+  "33": {
+    "name": "nidorino",
+    "evolves_from": [32],
+    "evolves_to": ["34"]
+  },
+  "34": {
+    "name": "nidoking",
+    "evolves_from": [32, 33],
+    "evolves_to": null
+  },
+  "35": {
+    "name": "clefairy",
+    "evolves_from": null,
+    "evolves_to": ["36"]
+  },
+  "36": {
+    "name": "clefable",
+    "evolves_from": [35],
+    "evolves_to": null
+  },
+  "37": {
+    "name": "vulpix",
+    "evolves_from": null,
+    "evolves_to": ["38"]
+  },
+  "38": {
+    "name": "ninetales",
+    "evolves_from": [37],
+    "evolves_to": null
+  },
+  "39": {
+    "name": "jigglypuff",
+    "evolves_from": null,
+    "evolves_to": ["40"]
+  },
+  "40": {
+    "name": "wigglytuff",
+    "evolves_from": [39],
+    "evolves_to": null
+  },
+  "41": {
+    "name": "zubat",
+    "evolves_from": null,
+    "evolves_to": ["42"]
+  },
+  "42": {
+    "name": "golbat",
+    "evolves_from": [41],
+    "evolves_to": null
+  },
+  "43": {
+    "name": "oddish",
+    "evolves_from": null,
+    "evolves_to": ["44", "45"]
+  },
+  "44": {
+    "name": "gloom",
+    "evolves_from": [43],
+    "evolves_to": ["45"]
+  },
+  "45": {
+    "name": "vileplume",
+    "evolves_from": [43, 44],
+    "evolves_to": null
+  },
+  "46": {
+    "name": "paras",
+    "evolves_from": null,
+    "evolves_to": ["47"]
+  },
+  "47": {
+    "name": "parasect",
+    "evolves_from": [46],
+    "evolves_to": null
+  },
+  "48": {
     "name": "venonat",
     "evolves_from": null,
     "evolves_to": ["49"]
   },
   "49": {
     "name": "venomoth",
-    "evolves_from": "48",
+    "evolves_from": [48],
     "evolves_to": null
   },
   "50": {
@@ -251,7 +251,7 @@
   },
   "51": {
     "name": "dugtrio",
-    "evolves_from": "50",
+    "evolves_from": [50],
     "evolves_to": null
   },
   "52": {
@@ -261,7 +261,7 @@
   },
   "53": {
     "name": "persian",
-    "evolves_from": "52",
+    "evolves_from": [52],
     "evolves_to": null
   },
   "54": {
@@ -271,7 +271,7 @@
   },
   "55": {
     "name": "golduck",
-    "evolves_from": "54",
+    "evolves_from": [54],
     "evolves_to": null
   },
   "56": {
@@ -281,7 +281,7 @@
   },
   "57": {
     "name": "primeape",
-    "evolves_from": "56",
+    "evolves_from": [56],
     "evolves_to": null
   },
   "58": {
@@ -291,7 +291,7 @@
   },
   "59": {
     "name": "arcanine",
-    "evolves_from": "58",
+    "evolves_from": [58],
     "evolves_to": null
   },
   "60": {
@@ -301,12 +301,12 @@
   },
   "61": {
     "name": "poliwhirl",
-    "evolves_from": "60",
+    "evolves_from": [60],
     "evolves_to": ["62"]
   },
   "62": {
     "name": "poliwrath",
-    "evolves_from": "61",
+    "evolves_from": [60, 61],
     "evolves_to": null
   },
   "63": {
@@ -316,12 +316,12 @@
   },
   "64": {
     "name": "kadabra",
-    "evolves_from": "63",
+    "evolves_from": [63],
     "evolves_to": ["65"]
   },
   "65": {
     "name": "alakazam",
-    "evolves_from": "64",
+    "evolves_from": [63, 64],
     "evolves_to": null
   },
   "66": {
@@ -331,12 +331,12 @@
   },
   "67": {
     "name": "machoke",
-    "evolves_from": "66",
+    "evolves_from": [66],
     "evolves_to": ["68"]
   },
   "68": {
     "name": "machamp",
-    "evolves_from": "67",
+    "evolves_from": [66, 67],
     "evolves_to": null
   },
   "69": {
@@ -346,12 +346,12 @@
   },
   "70": {
     "name": "weepinbell",
-    "evolves_from": "69",
+    "evolves_from": [69],
     "evolves_to": ["71"]
   },
   "71": {
     "name": "victreebel",
-    "evolves_from": "70",
+    "evolves_from": [69, 70],
     "evolves_to": null
   },
   "72": {
@@ -361,7 +361,7 @@
   },
   "73": {
     "name": "tentacruel",
-    "evolves_from": "72",
+    "evolves_from": [72],
     "evolves_to": null
   },
   "74": {
@@ -371,12 +371,12 @@
   },
   "75": {
     "name": "graveler",
-    "evolves_from": "74",
+    "evolves_from": [74],
     "evolves_to": ["76"]
   },
   "76": {
     "name": "golem",
-    "evolves_from": "75",
+    "evolves_from": [74, 75],
     "evolves_to": null
   },
   "77": {
@@ -386,7 +386,7 @@
   },
   "78": {
     "name": "rapidash",
-    "evolves_from": "77",
+    "evolves_from": [77],
     "evolves_to": null
   },
   "79": {
@@ -396,7 +396,7 @@
   },
   "80": {
     "name": "slowbro",
-    "evolves_from": "79",
+    "evolves_from": [79],
     "evolves_to": null
   },
   "81": {
@@ -406,7 +406,7 @@
   },
   "82": {
     "name": "magneton",
-    "evolves_from": "81",
+    "evolves_from": [81],
     "evolves_to": null
   },
   "83": {
@@ -421,7 +421,7 @@
   },
   "85": {
     "name": "dodrio",
-    "evolves_from": "84",
+    "evolves_from": [84],
     "evolves_to": null
   },
   "86": {
@@ -431,7 +431,7 @@
   },
   "87": {
     "name": "dewgong",
-    "evolves_from": "86",
+    "evolves_from": [86],
     "evolves_to": null
   },
   "88": {
@@ -441,7 +441,7 @@
   },
   "89": {
     "name": "muk",
-    "evolves_from": "88",
+    "evolves_from": [88],
     "evolves_to": null
   },
   "90": {
@@ -451,7 +451,7 @@
   },
   "91": {
     "name": "cloyster",
-    "evolves_from": "90",
+    "evolves_from": [90],
     "evolves_to": null
   },
   "92": {
@@ -461,12 +461,12 @@
   },
   "93": {
     "name": "haunter",
-    "evolves_from": "92",
+    "evolves_from": [92],
     "evolves_to": ["94"]
   },
   "94": {
     "name": "gengar",
-    "evolves_from": "93",
+    "evolves_from": [92, 93],
     "evolves_to": null
   },
   "95": {
@@ -481,7 +481,7 @@
   },
   "97": {
     "name": "hypno",
-    "evolves_from": "96",
+    "evolves_from": [96],
     "evolves_to": null
   },
   "98": {
@@ -491,7 +491,7 @@
   },
   "99": {
     "name": "kingler",
-    "evolves_from": "98",
+    "evolves_from": [98],
     "evolves_to": null
   },
   "100": {
@@ -501,7 +501,7 @@
   },
   "101": {
     "name": "electrode",
-    "evolves_from": "100",
+    "evolves_from": [100],
     "evolves_to": null
   },
   "102": {
@@ -511,7 +511,7 @@
   },
   "103": {
     "name": "exeggutor",
-    "evolves_from": "102",
+    "evolves_from": [102],
     "evolves_to": null
   },
   "104": {
@@ -521,7 +521,7 @@
   },
   "105": {
     "name": "marowak",
-    "evolves_from": "104",
+    "evolves_from": [104],
     "evolves_to": null
   },
   "106": {
@@ -546,7 +546,7 @@
   },
   "110": {
     "name": "weezing",
-    "evolves_from": "109",
+    "evolves_from": [109],
     "evolves_to": null
   },
   "111": {
@@ -556,7 +556,7 @@
   },
   "112": {
     "name": "rhydon",
-    "evolves_from": "111",
+    "evolves_from": [111],
     "evolves_to": null
   },
   "113": {
@@ -581,7 +581,7 @@
   },
   "117": {
     "name": "seadra",
-    "evolves_from": "116",
+    "evolves_from": [116],
     "evolves_to": null
   },
   "118": {
@@ -591,7 +591,7 @@
   },
   "119": {
     "name": "seaking",
-    "evolves_from": "118",
+    "evolves_from": [118],
     "evolves_to": null
   },
   "120": {
@@ -601,7 +601,7 @@
   },
   "121": {
     "name": "starmie",
-    "evolves_from": "120",
+    "evolves_from": [120],
     "evolves_to": null
   },
   "122": {
@@ -646,7 +646,7 @@
   },
   "130": {
     "name": "gyarados",
-    "evolves_from": "129",
+    "evolves_from": [129],
     "evolves_to": null
   },
   "131": {
@@ -666,17 +666,17 @@
   },
   "134": {
     "name": "vaporeon",
-    "evolves_from": "133",
+    "evolves_from": [133],
     "evolves_to": null
   },
   "135": {
     "name": "jolteon",
-    "evolves_from": "133",
+    "evolves_from": [133],
     "evolves_to": null
   },
   "136": {
     "name": "flareon",
-    "evolves_from": "133",
+    "evolves_from": [133],
     "evolves_to": null
   },
   "137": {
@@ -691,7 +691,7 @@
   },
   "139": {
     "name": "omastar",
-    "evolves_from": "138",
+    "evolves_from": [138],
     "evolves_to": null
   },
   "140": {
@@ -701,7 +701,7 @@
   },
   "141": {
     "name": "kabutops",
-    "evolves_from": "140",
+    "evolves_from": [140],
     "evolves_to": null
   },
   "142": {
@@ -736,12 +736,12 @@
   },
   "148": {
     "name": "dragonair",
-    "evolves_from": "147",
+    "evolves_from": [147],
     "evolves_to": ["149"]
   },
   "149": {
     "name": "dragonite",
-    "evolves_from": "148",
+    "evolves_from": [147, 148],
     "evolves_to": null
   },
   "150": {

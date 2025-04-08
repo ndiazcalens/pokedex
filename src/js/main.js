@@ -1,6 +1,7 @@
 const pokemonList = document.querySelector("#pokemon-list");
 const headerButtons = document.querySelectorAll(".btn-header");
 const detailPokemons = document.querySelector(".detail-view");
+const pokemons = document.querySelectorAll(".pokemon")
 const evolution= document.querySelector(".evols");
 
 
@@ -33,13 +34,14 @@ fetchAllPokemon();
 
 function showPokemon(data){
 
-    let types = data.types.map((type) => `<p class="${type.type.name} type">${type.type.name}</p> `);      //`type` es la variable de iteración del `.map()` que accede al objeto dentro de `data.types`.
+    let types = data.types.map((type) => `<p class="${type.type.name} type">${type.type.name}</p> `); //`type` es la variable de iteración del `.map()` que accede al objeto dentro de `data.types`.
     types = types.join('');                                         // `.join('')` une todos los elementos del array en una sola string sin separadores.
 
 
-    let dataId = (data.id).toString();
-    if (dataId.length === 1){
-        dataId = "00" + dataId;
+    let dataId = (data.id).toString();  //convierte el id de numero a string
+
+    if (dataId.length === 1){           //le agrega los ceros correspondientes para el formato
+        dataId = "00" + dataId;       
     } else if (dataId.length === 2){
         dataId = "0" + dataId;
     }
@@ -67,16 +69,14 @@ function showPokemon(data){
         </div>
     `;
 
-
+    
     div.addEventListener("click", ()=>{
+      
       const dataKey = div.getAttribute("data-key")
 
       pokemonList.innerHTML = "";
-      
-        console.log(evolutionsData[dataKey.replace(/^0+/, "")])
-        let evolutionTo= evolutionsData[dataKey.replace(/^0+/, "")].evolves_to;
-        let evolutionFrom = evolutionsData[dataKey.replace(/^0+/, "")].evolves_from;
-        console.log(evolutionFrom, evolutionTo);
+
+      let detailView = "";
       
       if (evolutionsData[dataKey.replace(/^0+/, "")] != null){
 
@@ -105,175 +105,170 @@ function showPokemon(data){
                   
                 </div>`
 
-        let evolutionTo= evolutionsData[dataKey.replace(/^0+/, "")].evolves_to;
-        let evolutionFrom = evolutionsData[dataKey.replace(/^0+/, "")].evolves_from;
-        
+        let evolutionTo= evolutionsData[data.id].evolves_to;  //datakey elimina los ceros a la izquierda, ej 001-->1
+        let evolutionFrom = evolutionsData[data.id].evolves_from;
+        console.log(data.id, evolutionTo, evolutionFrom);
 
         
         
         for (let i=0; i<151; i++){
 
+              //api                   //json
+          if(pokemonData[i].name == evolutionsData[data.id].name){
 
-          if(pokemonData[i].name == evolutionsData[dataKey.replace(/^0+/, "")].name){
-            console.log(pokemonData[i].name, evolutionsData[dataKey.replace(/^0+/, "")]);
+            console.log(pokemonData[i].name, evolutionsData[data.id].name, i+1, data.id);//para checkear que datos estoy usando
 
-
-            if (evolutionFrom == null && evolutionTo != null){
-                detailView +=`
+            if(evolutionTo != null && evolutionFrom == null){     console.log("b1")
+              console.log(evolutionTo.length)
+              detailView += `
                 <div class="evolutions-tittle">EVOLUTIONS</div>
-
-                <div class="evolutions">
-                  
-                  <div class="pokemon-detail">
-                    <p class="pokemon-id-back">#${pokemonData[i+1].id.toString().padStart(3, "0")}</p>
-                    <div class="pokemon-img">
-                        <img src="${pokemonData[i+1].sprites.other["official-artwork"].front_default}" alt="${pokemonData[i+1].name}">
-                    </div>
-                    <div class="pokemon-info">
-                        <div class="name-container">
-                            <p class="pokemon-id">#${pokemonData[i+1].id.toString().padStart(3, "0")}</p>
-                            <h2 class="pokemon-name">${pokemonData[i+1].name}</h2>
-                        </div>
-                        <div class="pokemon-types">
-                            ${types}
-                        </div>
-                        <div class="pokemon-stats">
-                            <p class="stat">${pokemonData[i+1].height}m</p>
-                            <p class="stat">${pokemonData[i+1].weight}kg</p>
-                        </div>
-                    </div>
-                  </div>
-
-                  <div class="pokemon-detail">
-                    <p class="pokemon-id-back">#${pokemonData[i+2].id.toString().padStart(3, "0")}</p>
-                    <div class="pokemon-img">
-                        <img src="${pokemonData[i+2].sprites.other["official-artwork"].front_default}" alt="${pokemonData[i+2].name}">
-                    </div>
-                    <div class="pokemon-info">
-                        <div class="name-container">
-                            <p class="pokemon-id">#${pokemonData[i+2].id.toString().padStart(3, "0")}</p>
-                            <h2 class="pokemon-name">${pokemonData[i+2].name}</h2>
-                        </div>
-                        <div class="pokemon-types">
-                            ${types}
-                        </div>
-                        <div class="pokemon-stats">
-                            <p class="stat">${pokemonData[i+2].height}m</p>
-                            <p class="stat">${pokemonData[i+2].weight}kg</p>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              `
-            }else if (evolutionFrom != null && evolutionTo != null){
-                detailView +=`
-
+                `
+              for(let x=0; x < evolutionTo.length; x++){ 
+                console.log(pokemonData[2], evolutionTo[0], evolutionTo[1])
+                //se le resta 1 unidad asi se ajusta con el indice del for, teniendo en cuenta que el indice del for arranca de 0 y el id en los datos arranca de 1
+                
+                detailView +=` 
                 
                 <div class="evolutions">
-                  <div>
-                    <div class="evolutions-tittles">
-                      <div class="evolutions-tittle-to">EVOLVES FROM</div>
-                    </div>
+              
                     <div class="pokemon-detail">
-                      <p class="pokemon-id-back">#${pokemonData[i-1].id.toString().padStart(3, "0")}</p>
+                      <p class="pokemon-id-back">#${pokemonData[(evolutionTo[x])-1].id.toString().padStart(3, "0")}</p>
                       <div class="pokemon-img">
-                          <img src="${pokemonData[i-1].sprites.other["official-artwork"].front_default}" alt="${pokemonData[i-1].name}">
+                          <img src="${pokemonData[(evolutionTo[x])-1].sprites.other["official-artwork"].front_default}" alt="${pokemonData[(evolutionTo[x]-1)].name}">
                       </div>
                       <div class="pokemon-info">
                           <div class="name-container">
-                              <p class="pokemon-id">#${pokemonData[i-1].id.toString().padStart(3, "0")}</p>
-                              <h2 class="pokemon-name">${pokemonData[i-1].name}</h2>
+                              <p class="pokemon-id">#${pokemonData[(evolutionTo[x])-1].id.toString().padStart(3, "0")}</p>
+                              <h2 class="pokemon-name">${pokemonData[(evolutionTo[x])-1].name}</h2>
                           </div>
                           <div class="pokemon-types">
                               ${types}
                           </div>
                           <div class="pokemon-stats">
-                              <p class="stat">${pokemonData[i-1].height}m</p>
-                              <p class="stat">${pokemonData[i-1].weight}kg</p>
+                              <p class="stat">${pokemonData[(evolutionTo[x])-1].height}m</p>
+                              <p class="stat">${pokemonData[(evolutionTo[x])-1].weight}kg</p>
                           </div>
                       </div>
                     </div>
-                  </div>
-
                   
-                  
-                  <div>
-                    <div class="evolutions-tittles">
-                      <div class="evolutions-tittle-to">EVOLVES TO</div>
-                    </div>
-                    <div class="pokemon-detail">
-                    <p class="pokemon-id-back">#${pokemonData[i+1].id.toString().padStart(3, "0")}</p>
-                    <div class="pokemon-img">
-                        <img src="${pokemonData[i+1].sprites.other["official-artwork"].front_default}" alt="${pokemonData[i+1].name}">
-                    </div>
-                    <div class="pokemon-info">
-                        <div class="name-container">
-                            <p class="pokemon-id">#${pokemonData[i+1].id.toString().padStart(3, "0")}</p>
-                            <h2 class="pokemon-name">${pokemonData[i+1].name}</h2>
-                        </div>
-                        <div class="pokemon-types">
-                            ${types}
-                        </div>
-                        <div class="pokemon-stats">
-                            <p class="stat">${pokemonData[i+1].height}m</p>
-                            <p class="stat">${pokemonData[i+1].weight}kg</p>
-                        </div>
-                  </div>
-                </div>
                 
-              </div>
-              `
-            }else if(evolutionFrom != null && evolutionTo == null){
-              detailView +=`
-                <div class="evolutions-tittle">EVOLVES FROM</div>
-
-                <div class="evolutions">
-                  
-                  <div class="pokemon-detail">
-                    <p class="pokemon-id-back">#${pokemonData[i-2].id.toString().padStart(3, "0")}</p>
-                    <div class="pokemon-img">
-                        <img src="${pokemonData[i-2].sprites.other["official-artwork"].front_default}" alt="${pokemonData[i-2].name}">
-                    </div>
-                    <div class="pokemon-info">
-                        <div class="name-container">
-                            <p class="pokemon-id">#${pokemonData[i-2].id.toString().padStart(3, "0")}</p>
-                            <h2 class="pokemon-name">${pokemonData[i-2].name}</h2>
-                        </div>
-                        <div class="pokemon-types">
-                            ${types}
-                        </div>
-                        <div class="pokemon-stats">
-                            <p class="stat">${pokemonData[i-2].height}m</p>
-                            <p class="stat">${pokemonData[i-2].weight}kg</p>
-                        </div>
-                    </div>
-                  </div>
-
-                  <div class="pokemon-detail">
-                    <p class="pokemon-id-back">#${pokemonData[i-1].id.toString().padStart(3, "0")}</p>
-                    <div class="pokemon-img">
-                        <img src="${pokemonData[i-1].sprites.other["official-artwork"].front_default}" alt="${pokemonData[i-1].name}">
-                    </div>
-                    <div class="pokemon-info">
-                        <div class="name-container">
-                            <p class="pokemon-id">#${pokemonData[i-1].id.toString().padStart(3, "0")}</p>
-                            <h2 class="pokemon-name">${pokemonData[i-1].name}</h2>
-                        </div>
-                        <div class="pokemon-types">
-                            ${types}
-                        </div>
-                        <div class="pokemon-stats">
-                            <p class="stat">${pokemonData[i-1].height}m</p>
-                            <p class="stat">${pokemonData[i-1].weight}kg</p>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
               `
             }
+            }
+
+
+            if(evolutionTo != null && evolutionFrom != null){
+              console.log("b2")
+              detailView += ` 
+                  <div class= chain-section>
+                    <div class="evolutions-container-from">
+                      <div class="evolutions-tittle-from">EVOLVES FROM</div>`
+              
+              for(let x=0; x < evolutionFrom.length; x++){
+                detailView += `
+                  <div class="evolutions">
+              
+                  <div class="pokemon-detail">
+                    <p class="pokemon-id-back">#${pokemonData[(evolutionFrom[x])-1].id.toString().padStart(3, "0")}</p>
+                    <div class="pokemon-img">
+                        <img src="${pokemonData[(evolutionFrom[x])-1].sprites.other["official-artwork"].front_default}" alt="${pokemonData[(evolutionFrom[x])-1].name}">
+                    </div>
+                    <div class="pokemon-info">
+                        <div class="name-container">
+                            <p class="pokemon-id">#${pokemonData[(evolutionFrom[x])-1].id.toString().padStart(3, "0")}</p>
+                            <h2 class="pokemon-name">${pokemonData[(evolutionFrom[x])-1].name}</h2>
+                        </div>
+                        <div class="pokemon-types">
+                            ${types}
+                        </div>
+                        <div class="pokemon-stats">
+                            <p class="stat">${pokemonData[(evolutionFrom[x])-1].height}m</p>
+                            <p class="stat">${pokemonData[(evolutionFrom[x])-1].weight}kg</p>
+                        </div>
+                    </div>
+                  </div>
+                  `
+                }
+              detailView += ` 
+                  </div>
+                </div>
+                <div class="evolutions-container-to">
+                <div class="evolutions-tittle-to">EVOLVES TO</div>
+                `
+              for(let x=0; x < evolutionTo.length; x++){
+                detailView += `
+                  <div class="evolutions">
+              
+                    <div class="pokemon-detail">
+                      <p class="pokemon-id-back">#${pokemonData[(evolutionTo[x])-1].id.toString().padStart(3, "0")}</p>
+                      <div class="pokemon-img">
+                          <img src="${pokemonData[(evolutionTo[x])-1].sprites.other["official-artwork"].front_default}" alt="${pokemonData[(evolutionTo[x]-1)].name}">
+                      </div>
+                      <div class="pokemon-info">
+                          <div class="name-container">
+                              <p class="pokemon-id">#${pokemonData[(evolutionTo[x])-1].id.toString().padStart(3, "0")}</p>
+                              <h2 class="pokemon-name">${pokemonData[(evolutionTo[x])-1].name}</h2>
+                          </div>
+                          <div class="pokemon-types">
+                              ${types}
+                          </div>
+                          <div class="pokemon-stats">
+                              <p class="stat">${pokemonData[(evolutionTo[x])-1].height}m</p>
+                              <p class="stat">${pokemonData[(evolutionTo[x])-1].weight}kg</p>
+                          </div>
+                      </div>
+                    </div>
+      
+                </div>
+                `
+              }
+              detailView += `
+                </div>
+                </div>
+                </div>
+                `
             
+            }
+
+
+            if(evolutionTo == null && evolutionFrom != null){
+              console.log("b3", evolutionFrom)
+
+              detailView += `
+                <div class="evolutions-tittle">EVOLVES FROM</div>
+                `
+
+              for(let x=0; x < evolutionFrom.length; x++){
+                detailView += `
+                  <div class="evolutions">
+              
+                  <div class="pokemon-detail">
+                    <p class="pokemon-id-back">#${pokemonData[(evolutionFrom[x])-1].id.toString().padStart(3, "0")}</p>
+                    <div class="pokemon-img">
+                        <img src="${pokemonData[(evolutionFrom[x])-1].sprites.other["official-artwork"].front_default}" alt="${pokemonData[(evolutionFrom[x])-1].name}">
+                    </div>
+                    <div class="pokemon-info">
+                        <div class="name-container">
+                            <p class="pokemon-id">#${pokemonData[(evolutionFrom[x])-1].id.toString().padStart(3, "0")}</p>
+                            <h2 class="pokemon-name">${pokemonData[(evolutionFrom[x])-1].name}</h2>
+                        </div>
+                        <div class="pokemon-types">
+                            ${types}
+                        </div>
+                        <div class="pokemon-stats">
+                            <p class="stat">${pokemonData[(evolutionFrom[x])-1].height}m</p>
+                            <p class="stat">${pokemonData[(evolutionFrom[x])-1].weight}kg</p>
+                        </div>
+                    </div>
+                  </div>
+                  `
+              }
+            
+            }
+
+
+
+             
           };
           
         
@@ -281,6 +276,8 @@ function showPokemon(data){
       }
       
       detailPokemons.innerHTML = detailView; 
+
+      
     })
     pokemonList.append(div);
     
